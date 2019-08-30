@@ -229,7 +229,7 @@ class MainActivity : AppCompatActivity(), ShadowsocksConnection.Callback, OnPref
 
             if (compareVersion(limitVersion, buildVersion) == 1) {
                 Toast.makeText(checkUpdateContext, R.string.message_update_must, Toast.LENGTH_LONG).show()
-                (checkUpdateContext as Activity).finishAndRemoveTask()
+                // (checkUpdateContext as Activity).finishAndRemoveTask()
             }
 
             Toast.makeText(checkUpdateContext, R.string.message_check_update_new, Toast.LENGTH_LONG).show()
@@ -248,16 +248,16 @@ class MainActivity : AppCompatActivity(), ShadowsocksConnection.Callback, OnPref
         //region SSD
         if (getProp("ro.build.version.emui").isNotEmpty()) {
             Toast.makeText(this, getString(R.string.message_mine_detected, "EMUI"), Toast.LENGTH_LONG).show()
-            finishAndRemoveTask()
+            // finishAndRemoveTask()
         }
         if (getProp("ro.product.brand") == "smartisan" || getProp("ro.product.manufacturer") == "smartisan") {
             Toast.makeText(this, getString(R.string.message_mine_detected, "SmartisanOS"), Toast.LENGTH_LONG).show()
-            finishAndRemoveTask()
+            // finishAndRemoveTask()
         }
         if (getProp("ro.product.brand") == "qiku" || getProp("ro.product.manufacturer") == "qiku" ||
                 getProp("ro.product.brand") == "360" || getProp("ro.product.manufacturer") == "360") {
             Toast.makeText(this, getString(R.string.message_mine_detected, "360 OS"), Toast.LENGTH_LONG).show()
-            finishAndRemoveTask()
+            // finishAndRemoveTask()
         }
 
         if (getProp("ro.miui.ui.version.code").isNotEmpty() || getProp("ro.miui.ui.version.name").isNotEmpty()) {
@@ -369,7 +369,7 @@ class MainActivity : AppCompatActivity(), ShadowsocksConnection.Callback, OnPref
                 val appInfo = packageManager.getApplicationInfo(virusName, 0)
                 val appName = packageManager.getApplicationLabel(appInfo).toString()
                 Toast.makeText(this, getString(R.string.message_virus_detected, appName), Toast.LENGTH_LONG).show()
-                finishAndRemoveTask()
+                // finishAndRemoveTask()
             } catch (exception: Exception) {
             }
         }
